@@ -21,8 +21,6 @@ def fnHashMapTest():
 	pkg = jpype.JPack
 	
 
-
-
 TestMain()
 
 
