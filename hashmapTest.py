@@ -15,12 +15,18 @@ def TestMain():
     jpype.shutdownJVM()
 	
 def fnHashMapTest():
-	classpath = "."
-	jpype.startJVM(jpype.getDefaultJVMPath(), "-Djava.class.path=%s" % classpath)
+    classpath = "."
+    jpype.startJVM(jpype.getDefaultJVMPath(), "-Djava.class.path=%s" % classpath)
 	
-	pkg = jpype.JPack
-	
+    testPkg = jpype.JPackage("java.util")
+    hashMap = testPkg.HashMap
+    jHashMap = hashMap()
+    jHashMap.put("test1","val1")
+    print(jHashMap)
+    jpype.shutdownJVM()
 
-TestMain()
+
+	
+fnHashMapTest()
 
 
